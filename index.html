@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Kate Haley | Gateway to Dark Stars</title>
+<meta name="description" content="Gateway to Dark Stars, book one of the Vincent Temple Trilogy by Kate Haley. Monster hunting in the age of jazz and bootleg liquor.">
+<meta property="og:title" content="A homepage for Kate Haley, made by Sparsh Saini">
+<meta property="og:description" content="A homepage idea for Kate Haley and the Vincent Temple Trilogy, made by Sparsh Saini. Not the official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/katehaley/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2306100b'/><path d='M3 3h26v26H3z M6 6h20v20H6z' fill='none' stroke='%23dfe7df' stroke-width='1.4'/><circle cx='12' cy='13' r='2.2' fill='%2348f08a'/><circle cx='20' cy='13' r='2.2' fill='%2348f08a'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Federo&family=Josefin+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* Colours from Gateway to Dark Stars: the black-green of the deep, the creature's green fire,
+   the silver of the Art Deco frame, and the gold, red and frost of books two, three and the prequel. */
+:root {
+  --deep: #050d09;
+  --sea: #0c1a14;
+  --moss: #14291f;
+  --fire: #4cf08e;
+  --fire-2: #1f9a5a;
+  --silver: #dfe7df;
+  --silver-2: #9fb0a5;
+  --gold: #e3bd5a;
+  --display: "Federo", "Futura", "Century Gothic", sans-serif;
+  --text: "Josefin Sans", "Futura", "Century Gothic", sans-serif;
+  --gutter: clamp(1rem, 5vw, 4rem);
+  --edge: clamp(.7rem, 2.2vw, 1.7rem);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--deep); color: var(--silver); font-family: var(--text); font-size: 1.12rem; line-height: 1.62; overflow-x: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+.wrap { max-width: 72rem; margin: 0 auto; padding: 0 var(--gutter); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; line-height: 1.04; text-transform: uppercase; letter-spacing: .02em; }
+p { margin: 0 0 1rem; }
+:focus-visible { outline: 2px solid var(--fire); outline-offset: 3px; }
+
+/* Buttons and rules drawn the way the cover draws its frame: ruled silver, double, square, with notched ends */
+.btn { position: relative; display: inline-block; padding: .78rem 1.35rem .62rem; font-family: var(--display); text-transform: uppercase; letter-spacing: .08em; font-size: 1rem; text-decoration: none; color: var(--silver); border: 1.5px solid var(--silver); outline: 1px solid rgba(223, 231, 223, .45); outline-offset: 3px; background: rgba(5, 13, 9, .55); }
+.btn:hover, .btn:focus-visible { background: var(--silver); color: var(--deep); }
+.btn.go { border-color: var(--fire); outline-color: rgba(76, 240, 142, .45); color: var(--fire); }
+.btn.go:hover, .btn.go:focus-visible { background: var(--fire); color: var(--deep); }
+.quiet { text-underline-offset: .25em; text-decoration-thickness: 1px; }
+.quiet:hover, .quiet:focus-visible { color: var(--fire); }
+.buy { display: flex; flex-wrap: wrap; gap: 1rem 1.3rem; align-items: center; }
+.rule { height: 7px; border-top: 1.5px solid var(--silver-2); border-bottom: 1.5px solid var(--silver-2); margin: 0 0 2rem; }
+
+.top { position: absolute; z-index: 30; top: 0; left: 0; right: 0; }
+.made { margin: 0; padding: .45rem var(--gutter); background: #020604; color: var(--silver-2); font-size: .92rem; line-height: 1.35; text-align: center; }
+
+/* Hero: the Gateway art in four planes (the sea, the creature, Vincent on his circle, the glow).
+   Scroll pushes in toward Vincent, the creature's eyes and the runes catch light, then the cover's
+   Art Deco frame builds itself round the scene until the page is the cover. */
+.hero { position: relative; height: 100svh; min-height: 38rem; }
+.js .hero { height: 360svh; }
+.stage { position: sticky; top: 0; height: 100svh; min-height: 38rem; overflow: hidden; background: var(--deep); }
+.scene { --fx: .5; --ar: 1.826; position: absolute; top: 50%; left: 50%; width: max(100vw, 100svh * var(--ar)); height: max(100svh, 100vw / var(--ar)); min-height: 38rem; min-width: calc(38rem * var(--ar)); transform: translate(calc(var(--fx) * -100%), -50%); }
+.lay { position: absolute; inset: 0; transform-origin: 52.5% 92%; will-change: transform; }
+.lay img { position: absolute; max-width: none; }
+.plate { left: 0; top: 0; width: 100%; height: 100%; }
+.creature { left: 21.353%; top: 0; width: 78.647%; height: 83.168%; }
+.eyes { left: 43.016%; top: 0; width: 46.037%; height: 56.153%; }
+.runes { left: 40.924%; top: 61.905%; width: 26.259%; height: 38.095%; }
+.vincent { left: 46.217%; top: 59.736%; width: 12.497%; height: 33.663%; }
+.js .eyes, .js .runes { opacity: 0; will-change: opacity; }
+.scrim { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(rgba(5, 13, 9, .5), transparent 18%, transparent 62%, rgba(5, 13, 9, .82)); }
+
+.open { position: absolute; z-index: 6; left: var(--gutter); bottom: 10svh; max-width: 38rem; will-change: transform, opacity; }
+.open .line { margin: 0; font-family: var(--display); text-transform: uppercase; font-size: clamp(2rem, 4.8vw, 3.9rem); line-height: 1.04; letter-spacing: .02em; text-wrap: balance; text-shadow: 0 2px 20px rgba(2, 6, 4, .9); }
+.open .from { margin: .8rem 0 0; font-style: italic; color: var(--silver-2); text-shadow: 0 1px 10px rgba(2, 6, 4, .9); }
+
+/* The frame: every piece is ruled, double, and grows from the middle of its side */
+.frame { position: absolute; z-index: 5; inset: var(--edge); pointer-events: none; }
+.side { position: absolute; will-change: transform; }
+.side.t, .side.b { left: 0; right: 0; height: 9px; border-top: 1.5px solid var(--silver); border-bottom: 1.5px solid var(--silver); }
+.side.l, .side.r { top: 0; bottom: 0; width: 9px; border-left: 1.5px solid var(--silver); border-right: 1.5px solid var(--silver); }
+.side.t { top: 0; } .side.b { bottom: 0; } .side.l { left: 0; } .side.r { right: 0; }
+.js .side.t, .js .side.b { transform: scaleX(0); }
+.js .side.l, .js .side.r { transform: scaleY(0); }
+.corner { position: absolute; width: 4.2rem; height: 4.2rem; will-change: opacity, transform; }
+.corner svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.corner.tl { left: -1px; top: -1px; } .corner.tr { right: -1px; top: -1px; transform: scaleX(-1); }
+.corner.bl { left: -1px; bottom: -1px; transform: scaleY(-1); } .corner.br { right: -1px; bottom: -1px; transform: scale(-1, -1); }
+.js .corner { opacity: 0; }
+.byline { position: absolute; z-index: 6; top: calc(var(--edge) + 2.7rem); left: 0; right: 0; text-align: center; font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.4rem); letter-spacing: .14em; text-transform: uppercase; will-change: opacity, transform; text-shadow: 0 2px 16px rgba(2, 6, 4, .9); }
+.byline a { text-decoration: none; }
+.js .byline { opacity: 0; }
+
+.plaque { position: absolute; z-index: 6; left: 50%; bottom: calc(var(--edge) + 2.2rem); width: min(44rem, calc(100% - 2 * var(--edge) - 2rem)); transform: translateX(-50%); text-align: center; will-change: opacity, transform; }
+.plaque .panel { position: relative; padding: 1.2rem 1.4rem 1.1rem; background: rgba(5, 13, 9, .78); border-top: 1.5px solid var(--silver); border-bottom: 1.5px solid var(--silver); outline: 1px solid rgba(223, 231, 223, .5); outline-offset: 5px; }
+.plaque h1 { font-size: clamp(2.3rem, 5.6vw, 4.4rem); line-height: 1.04; letter-spacing: .04em; }
+.plaque .series { display: inline-block; margin: 1rem 0 0; padding: .35rem 2.4rem .2rem; font-family: var(--display); text-transform: uppercase; letter-spacing: .1em; font-size: clamp(.9rem, 1.6vw, 1.1rem); border: 1.5px solid var(--silver); clip-path: polygon(0 50%, 1.2rem 0, calc(100% - 1.2rem) 0, 100% 50%, calc(100% - 1.2rem) 100%, 1.2rem 100%); }
+.plaque .buy { justify-content: center; margin-top: 1.4rem; }
+.js .plaque { opacity: 0; }
+.js .plaque .buy { opacity: 0; will-change: opacity, transform; }
+html:not(.js) .open { display: none; }
+/* The cover's lettering: bold Deco capitals with a thin dark line run inside each stroke.
+   Made from the real text: the letter is thickened with a stroke, and a copy on top draws
+   only its own outline in the dark colour, which lands inside the thickened letter. */
+.inl { position: relative; -webkit-text-stroke: .085em currentColor; paint-order: stroke fill; }
+.inl::after { content: attr(data-text); position: absolute; inset: 0; color: transparent; -webkit-text-stroke: .028em var(--deep); pointer-events: none; }
+.plaque .num { margin: .55rem auto 0; width: 3.2rem; height: 2.2rem; padding-top: .1rem; font-family: var(--display); font-size: 1.25rem; border: 1.5px solid var(--silver); border-top: 0; clip-path: polygon(0 0, 100% 0, 100% 40%, 50% 100%, 0 40%); background: rgba(223, 231, 223, .08); }
+.tint { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 60% 70% at 55% 45%, rgba(40, 210, 110, .26), rgba(20, 120, 60, .12) 60%, transparent); will-change: opacity; }
+.js .tint { opacity: 0; }
+
+/* Bottom plaque nav: appears once the hero has become the cover */
+.dock { position: fixed; z-index: 40; left: 50%; bottom: .8rem; display: flex; gap: .2rem; padding: .35rem; background: rgba(5, 13, 9, .9); border: 1.5px solid var(--silver-2); outline: 1px solid rgba(159, 176, 165, .4); outline-offset: 3px; transform: translate(-50%, 140%); opacity: 0; transition: transform .35s ease, opacity .35s ease; }
+.dock.on { transform: translate(-50%, 0); opacity: 1; }
+.dock a { padding: .45rem .8rem .3rem; font-family: var(--display); text-transform: uppercase; letter-spacing: .08em; font-size: .9rem; text-decoration: none; white-space: nowrap; }
+.dock a:hover, .dock a:focus-visible { background: var(--silver); color: var(--deep); }
+
+/* Calm sections */
+.band { padding: clamp(4.5rem, 10vw, 8rem) 0; }
+h2 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); margin-bottom: 1rem; text-wrap: balance; }
+.lead { font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.45; max-width: 40rem; }
+
+.book { background: var(--sea); }
+.book .grid { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
+.book .cover { box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .6); position: sticky; top: 2rem; }
+.tagline { font-family: var(--display); text-transform: uppercase; font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.12; color: var(--fire); margin-bottom: 1.4rem; }
+.price { list-style: none; padding: 0; margin: 2rem 0 1.6rem; border-top: 1.5px solid var(--silver-2); }
+.price li { border-bottom: 1px solid rgba(159, 176, 165, .35); }
+.price a { display: flex; justify-content: space-between; gap: 1rem; padding: .9rem 0 .75rem; text-decoration: none; font-weight: 600; }
+.price a span { color: var(--silver-2); font-weight: 400; }
+.price a:hover, .price a:focus-visible { color: var(--fire); }
+
+.trilogy { background: var(--deep); }
+.four { list-style: none; margin: 2.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2.6vw, 2rem); }
+.four a { display: block; text-decoration: none; }
+.four img { box-shadow: 0 1rem 2rem rgba(0, 0, 0, .6); margin-bottom: 1rem; }
+.four b { display: block; font-family: var(--display); text-transform: uppercase; font-weight: 400; font-size: 1.15rem; line-height: 1.15; letter-spacing: .03em; }
+.four i { display: block; color: var(--silver-2); font-size: 1rem; line-height: 1.4; margin-top: .35rem; }
+.four .n { color: var(--gold); font-style: normal; font-family: var(--display); }
+
+.sets { background: radial-gradient(ellipse 70% 80% at 70% 50%, #123222, var(--moss) 60%); }
+.sets .grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
+.sets .pics { display: grid; grid-template-columns: 1.15fr .85fr; gap: 1rem; align-items: end; }
+.made-list { list-style: none; padding: 0; margin: 1.6rem 0 2rem; }
+.made-list li { padding: .55rem 0 .4rem 1.8rem; position: relative; border-bottom: 1px solid rgba(159, 176, 165, .3); }
+.made-list li::before { content: ""; position: absolute; left: 0; top: .95rem; width: .75rem; height: .75rem; border: 1.5px solid var(--fire); transform: rotate(45deg); }
+.con { margin-top: 2.4rem; padding: 1.4rem 1.5rem 1.1rem; border-top: 1.5px solid var(--gold); border-bottom: 1.5px solid var(--gold); outline: 1px solid rgba(227, 189, 90, .45); outline-offset: 4px; }
+.con h3 { color: var(--gold); font-size: 1.5rem; margin-bottom: .6rem; }
+
+.worlds { background: var(--sea); }
+.worlds .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2.5rem, 6vw, 5rem); margin-top: 2.6rem; }
+.world { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1.4rem; align-items: start; }
+.world h3 { font-size: 1.6rem; margin-bottom: .6rem; }
+.also { margin-top: 3.4rem; display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 1.4rem; align-items: center; }
+.also img { width: 8.5rem; }
+
+.about { background: var(--deep); }
+.about .grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(2.5rem, 6vw, 5rem); align-items: start; }
+.about .big { font-family: var(--display); text-transform: uppercase; font-size: clamp(1.8rem, 3.4vw, 2.7rem); line-height: 1.1; color: var(--fire); margin: 1.6rem 0; }
+.free { padding: 1.6rem 1.5rem 1.2rem; border: 1.5px solid var(--silver-2); outline: 1px solid rgba(159, 176, 165, .4); outline-offset: 4px; }
+.free h3 { font-size: 1.45rem; margin-bottom: .6rem; }
+
+footer { padding: 2.2rem 0 5.5rem; background: #020604; color: var(--silver-2); font-size: .98rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: .8rem 2rem; justify-content: space-between; }
+footer p { margin: 0; }
+
+@media (max-width: 760px) {
+  body { font-size: 1.06rem; }
+  .scene { --fx: .53; }
+  .open { bottom: 8svh; right: var(--gutter); }
+  .byline { top: calc(var(--edge) + 2.4rem); }
+  .corner { width: 2.8rem; height: 2.8rem; }
+  .plaque { bottom: calc(var(--edge) + 1.2rem); }
+  .plaque .panel { padding: 1rem .8rem .9rem; }
+  .plaque .series { padding: .3rem 1.6rem .15rem; }
+  .plaque .buy { gap: .8rem 1rem; }
+  .book .grid, .sets .grid, .worlds .grid, .about .grid { grid-template-columns: minmax(0, 1fr); }
+  .book .cover { position: static; max-width: 15rem; }
+  .four { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2rem; }
+  .world { grid-template-columns: 6.5rem minmax(0, 1fr); }
+  .also { grid-template-columns: 1fr 1fr; }
+  .also p { grid-column: 1 / -1; }
+  .also img { width: 100%; }
+  .dock a { padding: .45rem .55rem .3rem; font-size: .82rem; letter-spacing: .05em; }
+  .dock .wide { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
+</style>
+</head>
+<body>
+<div class="top">
+  <p class="made">A homepage idea made by Sparsh Saini for Kate Haley. Not their official site.</p>
+</div>
+
+<nav class="dock" aria-label="Main">
+  <a href="#book">Gateway</a>
+  <a href="#trilogy">The trilogy</a>
+  <a class="wide" href="#sets">Deluxe sets</a>
+  <a href="#worlds">Other worlds</a>
+  <a href="#about">Kate</a>
+</nav>
+
+<main>
+<section class="hero" aria-label="Gateway to Dark Stars">
+  <div class="stage">
+    <div class="scene" role="img" aria-label="Vincent Temple, in hat and long coat with a revolver and a sword, stands on a glowing green rune circle before a giant tentacled creature with burning green eyes">
+      <div class="lay back"><img class="plate" src="img/g-plate.jpg" alt="" width="2600" height="1424" fetchpriority="high"><img class="runes" src="img/g-runes.webp" alt="" width="1017" height="808"></div>
+      <div class="lay mid"><img class="creature" src="img/g-creature.webp" alt="" width="2045" height="1184"><img class="eyes" src="img/g-eyes.webp" alt="" width="1197" height="800"></div>
+      <div class="lay front"><img class="vincent" src="img/g-vincent.webp" alt="" width="484" height="714"></div>
+    </div>
+    <div class="tint"></div>
+    <div class="scrim"></div>
+
+    <div class="open">
+      <p class="line inl" data-text="Slaying monsters. It ain’t much, but it’s honest work.">Slaying monsters. It ain’t much, but it’s honest work.</p>
+      <p class="from">Gateway to Dark Stars, the Vincent Temple Trilogy</p>
+    </div>
+
+    <div class="frame" aria-hidden="true">
+      <div class="side t"></div><div class="side b"></div><div class="side l"></div><div class="side r"></div>
+      <div class="corner tl"><svg viewBox="0 0 60 60"><path d="M0 22H14V14H22V0 M0 30H20V20H30V0 M8 40V8H40" fill="none" stroke="#dfe7df" stroke-width="1.6"/></svg></div>
+      <div class="corner tr"><svg viewBox="0 0 60 60"><path d="M0 22H14V14H22V0 M0 30H20V20H30V0 M8 40V8H40" fill="none" stroke="#dfe7df" stroke-width="1.6"/></svg></div>
+      <div class="corner bl"><svg viewBox="0 0 60 60"><path d="M0 22H14V14H22V0 M0 30H20V20H30V0 M8 40V8H40" fill="none" stroke="#dfe7df" stroke-width="1.6"/></svg></div>
+      <div class="corner br"><svg viewBox="0 0 60 60"><path d="M0 22H14V14H22V0 M0 30H20V20H30V0 M8 40V8H40" fill="none" stroke="#dfe7df" stroke-width="1.6"/></svg></div>
+    </div>
+    <p class="byline inl" data-text="Kate Haley">Kate Haley</p>
+
+    <div class="plaque">
+      <div class="panel">
+        <h1 class="inl" data-text="Gateway to Dark Stars">Gateway to Dark Stars</h1>
+        <p class="series">The Vincent Temple Trilogy</p>
+        <p class="num">1</p>
+      </div>
+      <div class="buy">
+        <a class="btn go" href="https://katehaleyauthor.com/b/gatewaytodarkstars-deluxe">Get the deluxe</a>
+        <a class="btn" href="#book">Every edition</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band book" id="book">
+  <div class="wrap grid">
+    <img class="cover" src="img/gateway.jpg" alt="Gateway to Dark Stars by Kate Haley, the Vincent Temple Trilogy book one" width="560" height="902" loading="lazy">
+    <div>
+      <div class="rule"></div>
+      <h2>Gateway to Dark Stars</h2>
+      <p class="tagline">Slaying monsters. It ain’t much, but it’s honest work.</p>
+      <p>In the age of jazz and bootleg liquor, black magic is making a big comeback. Luckily, the scourge of demons and cultists are keeping Doctor Vincent Temple in business. Even the Mafia are having trouble with monsters, and they’ve hired Temple to sort it out.</p>
+      <p>Cash is cash, and the old Doctor has never been one to turn his nose up at a job, no matter who’s paying. This time luck is smiling on him. The gangsters are tangling with a cult Doctor Temple has been stalking over a personal matter, but when reconnaissance turns into rescue can he save the world before things become too personal?</p>
+      <p class="lead">The Witcher meets Cthulhu, gruesome and high-octane.</p>
+      <ul class="price">
+        <li><a href="https://katehaleyauthor.com/b/gatewaytodarkstars-deluxe">Deluxe hardback <span>foiled, sprayed edges · US$35.99</span></a></li>
+        <li><a href="https://katehaleyauthor.com/b/gatewaytodarkstars-hardback">Hardback <span>US$19.99</span></a></li>
+        <li><a href="https://katehaleyauthor.com/b/gatewaytodarkstars-paperback">Paperback <span>US$10.99</span></a></li>
+        <li><a href="https://mybook.to/VincentTemple">Kindle and Audible <span>on Amazon</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band trilogy" id="trilogy">
+  <div class="wrap">
+    <h2>Doctor Vincent Temple</h2>
+    <p class="lead">Fights an endless battle against the eldritch horrors that seek to dominate and destroy our world. But can he do it alone?</p>
+    <ul class="four">
+      <li><a href="https://katehaleyauthor.com/b/pathofdreamingsouls-paperback"><img src="img/path.jpg" alt="Path of Dreaming Souls, a Vincent Temple prequel" width="400" height="646" loading="lazy"><b><span class="n">0</span> Path of Dreaming Souls</b><i>The prequel</i></a></li>
+      <li><a href="https://katehaleyauthor.com/b/gatewaytodarkstars-paperback"><img src="img/gateway.jpg" alt="Gateway to Dark Stars, book one" width="560" height="902" loading="lazy"><b><span class="n">1</span> Gateway to Dark Stars</b><i>The Mafia have a monster problem.</i></a></li>
+      <li><a href="https://katehaleyauthor.com/b/tombofendlessnight-paperback"><img src="img/tomb.jpg" alt="Tomb of Endless Night, book two" width="400" height="641" loading="lazy"><b><span class="n">2</span> Tomb of Endless Night</b><i>Back to Egypt. And this time, it’s personal.</i></a></li>
+      <li><a href="https://katehaleyauthor.com/b/fortressoftheshadowreich-paperback"><img src="img/fortress.jpg" alt="Fortress of the Shadow Reich, book three" width="400" height="645" loading="lazy"><b><span class="n">3</span> Fortress of the Shadow Reich</b><i>Witches, vampires, demons, and Nazis.</i></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band sets" id="sets">
+  <div class="wrap grid">
+    <div>
+      <h2>Made for the shelf</h2>
+      <p class="lead">The whole trilogy and the prequel as deluxe hardbacks, each one made to order.</p>
+      <ul class="made-list">
+        <li>Custom foiled covers</li>
+        <li>Illustrated endpapers</li>
+        <li>Sprayed edges</li>
+        <li>A boxed set for all four, now with 3D bookmarks</li>
+      </ul>
+      <div class="buy">
+        <a class="btn go" href="https://katehaleyauthor.com/b/vincenttempleset-deluxe">Deluxe boxed set · US$159</a>
+        <a class="quiet" href="https://katehaleyauthor.com/b/vincenttempleset-hardback">Hardback set</a>
+        <a class="quiet" href="https://katehaleyauthor.com/b/vincenttempleset-paperback">Paperback set</a>
+      </div>
+      <div class="con">
+        <h3>Met me at a con?</h3>
+        <p>If you started a set at my table, at Armageddon in Auckland or anywhere else, and want to finish it in Aotearoa, get in touch and I’ll sort you out.</p>
+        <a class="quiet" href="https://katehaleyauthor.com/contact">Write to the raccoon</a>
+      </div>
+    </div>
+    <div class="pics">
+      <img src="img/deluxe-set.webp" alt="The Vincent Temple deluxe boxed set in green and black Art Deco, with the four spines" width="760" height="954" loading="lazy">
+      <img src="img/gateway-deluxe.webp" alt="The deluxe hardback of Gateway to Dark Stars with green foil and sprayed edges" width="620" height="844" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="band worlds" id="worlds">
+  <div class="wrap">
+    <h2>Other worlds</h2>
+    <div class="grid">
+      <div class="world">
+        <img src="img/shilling-florin.webp" alt="Shilling and Florin book one, The Jack of Hearts Murders" width="520" height="657" loading="lazy">
+        <div>
+          <h3>Shilling &amp; Florin</h3>
+          <p>A slow burn, cosy series of mysteries in an alternate, progressive Victorian London. A scruffy anarchist sleuth, a brilliant medical student, and a serial killer to start. Eight books.</p>
+          <a class="quiet" href="https://katehaleyauthor.com/collection/shilling-florin-mysteries">The whole series</a>
+        </div>
+      </div>
+      <div class="world">
+        <img src="img/steel-stone.webp" alt="Steel and Stone, The War of the North Saga book one" width="520" height="657" loading="lazy">
+        <div>
+          <h3>The War of the North</h3>
+          <p>Gods, dragons and monsters, and a group of friends who uncover a terrible plot and have to save their world from it. Seven books, starting with Steel &amp; Stone.</p>
+          <a class="quiet" href="https://katehaleyauthor.com/collection/the-war-of-the-north-saga">The whole saga</a>
+        </div>
+      </div>
+    </div>
+    <div class="also">
+      <img src="img/light-after-earth.webp" alt="The Light After Earth, deluxe edition" width="440" height="599" loading="lazy">
+      <img src="img/heroes-of-old.webp" alt="Like the Heroes of Old, deluxe edition" width="440" height="599" loading="lazy">
+      <p>And two standalones: The Light After Earth and Like the Heroes of Old. <a class="quiet" href="https://katehaleyauthor.com/collection/stand-alone-books">Stand alone books</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="band about" id="about">
+  <div class="wrap grid">
+    <div>
+      <div class="rule"></div>
+      <h2>Kate Haley</h2>
+      <p class="lead">I write speculative fiction, mostly fantasy and horror.</p>
+      <p>When I’m not writing or playing tabletop RPGs, I’m working on world domination. Something like the tyranny of the greatest city atop the Disc would be an acceptable standard. A super-villainous overlord would be an upgrade, given that our current villains lack style and imagination.</p>
+      <p class="big">After all, super-villainy requires Presentation.</p>
+      <p>If you like my references, try my books.</p>
+    </div>
+    <div class="free">
+      <h3>A free book</h3>
+      <p>Join my mailing list and get Footsteps into the Unfamiliar, the illustrated edition, as an ebook. Begin the saga today.</p>
+      <a class="btn go" href="https://storyoriginapp.com/giveaways/debd5d0a-813c-11ec-ab83-37d13c1b335c">Collect free book</a>
+      <p style="margin-top:1.4rem"><a class="quiet" href="https://instagram.com/katehaleyauthor/">Instagram</a> · <a class="quiet" href="https://facebook.com/katehaleyauthor/">Facebook</a> · <a class="quiet" href="https://author.to/Katehaleyauthor">Amazon</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>A mockup made by Sparsh Saini for Kate Haley. Not affiliated, not live. The covers, art and words are the author’s.</p>
+    <p><a class="quiet" href="#">Back to top</a></p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const hero = document.querySelector('.hero');
+  const back = hero.querySelector('.back'), mid = hero.querySelector('.mid'), front = hero.querySelector('.front');
+  const eyes = hero.querySelector('.eyes'), runes = hero.querySelector('.runes'), tint = hero.querySelector('.tint');
+  const open = hero.querySelector('.open'), byline = hero.querySelector('.byline'), plaque = hero.querySelector('.plaque'), buy = plaque.querySelector('.buy');
+  const sides = [...hero.querySelectorAll('.side')], corners = [...hero.querySelectorAll('.corner')];
+  const flip = { tl: '', tr: 'scaleX(-1) ', bl: 'scaleY(-1) ', br: 'scale(-1,-1) ' };
+  const dock = document.querySelector('.dock');
+  const clamp = v => Math.min(1, Math.max(0, v));
+  const ease = t => t * t * (3 - 2 * t);
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let top = 0, run = 1;
+  const measure = () => { top = hero.getBoundingClientRect().top + scrollY; run = hero.offsetHeight - innerHeight; };
+
+  const render = p => {
+    // Push in toward Vincent's feet: the sea a little, the creature more, Vincent most.
+    const z = ease(clamp((p - .03) / .55));
+    back.style.transform = `scale(${(1 + .08 * z).toFixed(4)})`;
+    mid.style.transform = `translateY(${(-1.5 * z).toFixed(2)}%) scale(${(1 + .2 * z).toFixed(4)})`;
+    front.style.transform = `scale(${(1 + .36 * z).toFixed(4)})`;
+    // The creature wakes: eyes and the rune circle catch fire.
+    const g = ease(clamp((p - .16) / .22));
+    eyes.style.opacity = g.toFixed(3); runes.style.opacity = g.toFixed(3); tint.style.opacity = g.toFixed(3);
+    const o = ease(clamp((p - .03) / .16));
+    open.style.opacity = (1 - o).toFixed(3); open.style.transform = `translateY(${(-o * 2.5).toFixed(2)}rem)`;
+    // The frame builds: top and bottom rules run out from the middle, then the sides, then the stepped corners.
+    const h = ease(clamp((p - .4) / .16)), v = ease(clamp((p - .48) / .16)), c = ease(clamp((p - .58) / .1));
+    sides[0].style.transform = sides[1].style.transform = `scaleX(${h.toFixed(4)})`;
+    sides[2].style.transform = sides[3].style.transform = `scaleY(${v.toFixed(4)})`;
+    corners.forEach(el => { el.style.opacity = c.toFixed(3); el.style.transform = flip[el.classList[1]] + `scale(${(1.25 - .25 * c).toFixed(4)})`; });
+    byline.style.opacity = c.toFixed(3); byline.style.transform = `translateY(${((1 - c) * -.8).toFixed(2)}rem)`;
+    const t = ease(clamp((p - .62) / .16));
+    plaque.style.opacity = t.toFixed(3); plaque.style.transform = `translateX(-50%) translateY(${((1 - t) * 1.6).toFixed(2)}rem)`;
+    const b = ease(clamp((p - .76) / .14));
+    buy.style.opacity = b.toFixed(3); buy.style.transform = `translateY(${((1 - b) * .8).toFixed(2)}rem)`;
+  };
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const p = reduced ? 1 : (run > 0 ? clamp((scrollY - top) / run) : 1);
+    if (!reduced) render(p);
+    dock.classList.toggle('on', scrollY > top + run + innerHeight * .3);
+  };
+  if (reduced) { hero.style.height = '100svh'; render(1); }
+  measure();
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener('resize', () => { measure(); update(); });
+  update();
+})();
+</script>
+</body>
+</html>
